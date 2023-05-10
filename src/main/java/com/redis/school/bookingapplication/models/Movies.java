@@ -1,26 +1,40 @@
 package com.redis.school.bookingapplication.models;
 
-import java.util.UUID;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Movies {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private UUID id;
+    private Long id;
 
     private String name;
+    private Integer yearOfRelease;
 
-    public UUID getId() {
+ /*   @ManyToOne
+    private List<Schedule> schedules;
+
+    public List<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
+    }*/
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -30,5 +44,13 @@ public class Movies {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getYearOfRelease() {
+        return yearOfRelease;
+    }
+
+    public void setYearOfRelease(Integer yearOfRelease) {
+        this.yearOfRelease = yearOfRelease;
     }
 }
