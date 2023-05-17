@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
 import com.redis.school.bookingapplication.models.Movies;
-import com.redis.school.bookingapplication.models.Schedule;
+import com.redis.school.bookingapplication.models.TimeSlot;
 import com.redis.school.bookingapplication.repositories.MovieRepository;
 import com.redis.school.bookingapplication.repositories.ScheduleRepo;
 
@@ -39,7 +39,7 @@ class DummyDataGenerator implements CommandLineRunner {
         movie2.setName("supermann");
         movie2.setYearOfRelease(2010);
         repository.save(movie2);
-        var schedule = new Schedule();
+        var schedule = new TimeSlot();
         schedule.setMovie(movie2);
         schedule.setPlayingTime(LocalDateTime.now());
         scheduleRepo.save(schedule);

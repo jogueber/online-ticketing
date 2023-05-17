@@ -1,13 +1,10 @@
 package com.redis.school.bookingapplication.models;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Movies {
@@ -19,16 +16,6 @@ public class Movies {
     private String name;
     private Integer yearOfRelease;
 
- /*   @ManyToOne
-    private List<Schedule> schedules;
-
-    public List<Schedule> getSchedules() {
-        return schedules;
-    }
-
-    public void setSchedules(List<Schedule> schedules) {
-        this.schedules = schedules;
-    }*/
 
     public Long getId() {
         return id;
